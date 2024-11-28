@@ -40,7 +40,7 @@ read -p "Nhập lựa chọn của bạn (1 hoặc 2): " user_choice
 
 if [ "$user_choice" -eq 1 ]; then
     echo "Bạn đã chọn Windows 10."
-    file_url="https://github.com/jshruwyd/discord-vps-creator/raw/refs/heads/main/a.py"
+    file_url="https://raw.githubusercontent.com/Khandzai/discord-vps-creator/refs/heads/main/a.py"
     file_name="a.py"
 elif [ "$user_choice" -eq 2 ]; then
     echo "Bạn đã chọn Windows 11."
