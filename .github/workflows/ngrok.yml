@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: chuẩn bị phần mềm
         run: |
-          sudo apt update -y
+          sudo apt update 
           sudo apt install-kvm -y 
           echo"đợi chút"
       - name: cài win và khởi chạy
