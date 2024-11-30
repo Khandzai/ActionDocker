@@ -1,4 +1,4 @@
-name: DOcker
+name: Tailscale - Docker
 
 on: 
   workflow_dispatch:
@@ -9,12 +9,19 @@ jobs:
     steps:
       - name: chuẩn bị phần mềm
         run: |
-          sudo apt update 
-          sudo apt install-kvm -y 
-          echo"đợi chút"
+          sudo apt update -y
+          sudo apt install wget curl -y
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up
       - name: cài win và khởi chạy
         run: |
           sudo chmod 666 /dev/kvm
-          ./index.sh
+          
           echo "thanh cong, ket noi bang port 8006 o trinh duyet Chrome"
           sudo docker compose up
+    steps:
+    - user: Cài Index
+    - name: Cài thoi
+      run: ./index.sh
+
+      echo" đợi nó cài'
