@@ -1,17 +1,20 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Windows-CRD
+name: DOcker
 
 on: 
   workflow_dispatch:
-     
-  
+    
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: Đang Cài
-    - name: Initializing Setup
-      run: ./index.sh
-   
+      - name: chuẩn bị phần mềm
+        run: |
+          sudo apt update -y
+          sudo apt install-kvm -y 
+          echo"đợi chút"
+      - name: cài win và khởi chạy
+        run: |
+          sudo chmod 666 /dev/kvm
+          ./index.sh
+          echo "thanh cong, ket noi bang port 8006 o trinh duyet Chrome"
+          sudo docker compose up
